@@ -8,11 +8,15 @@
 7. Run `cdk deploy --all`
 # Test
 The DNS name for the API-gateway will be output in the end of the stack deployment. 
+It looks something like this in the terminal:
+
+`Outputs:
+CDK-API-STACK.APIGATEWAYEndpoint8F624808 = https://EXAMPLE.eu-west-2.amazonaws.com/prod/`
+
 Head to that url. It will contain two sub-urls:
 
-
-* https://API-GATEWAY-URL/hello-s3 (displaying index.html) 
-* https://API-GATEWAY-URL/hello-fargate (displaying the nginx containers from the fargate service)
+* https://EXAMPLE.eu-west-2.amazonaws.com/prod/hello-s3 (displaying index.html) 
+* https://EXAMPLE.eu-west-2.amazonaws.com/prod/hello-fargate (displaying the nginx containers from the fargate service)
 
 # Challenge 1: Automatically provisioning stacks
 We want to introduce an API in a separate stack that owns the users and their properties.
@@ -33,16 +37,17 @@ S3 buckets for storage of static objects
 You can use any programming language you prefer. If you don’t care, we use Python.
 
 ## TODOs:
-- √ Initial setup (cdk, libs, AWS account etc.)
-- √ Deploy Dynamo table
-- √ Fargate container running Nginx
-- √ AWS Loadbalancer
-- √ S3 bucket
-- √ (optional) API Gateway
+- :white_check_mark: Initial setup (cdk, libs, AWS account etc.)
+- :white_check_mark: Deploy Dynamo table
+- :white_check_mark: Fargate container running Nginx
+- :white_check_mark: AWS Loadbalancer
+- :white_check_mark: S3 bucket
+- :white_check_mark: (optional) API Gateway
+- :white_check_mark: (optional) Use API Gateway to display data (s3, dynamodb, fargate)
 
 ### Improvements
 - Deletion of s3 bucket on `cdk destroy`
-- Add data to dynamodb table
+- Add data to Dynamodb table
 - "Expose" Dynamodb table data
 - Add tests
 

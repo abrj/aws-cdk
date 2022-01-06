@@ -1,6 +1,6 @@
 {
   "app": "python3 app.py",
-  "profile": "<PROFILE>",
+  "profile": "private-anders-veo",
   "watch": {
     "include": [
       "**"
